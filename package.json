@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "remix-app-template",
+  "description": "",
+  "license": "",
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev",
+    "postinstall": "remix setup node",
+    "start": "remix-serve build"
+  },
+  "dependencies": {
+    "@remix-run/react": "^1.0.6",
+    "@remix-run/serve": "^1.0.6",
+    "@salte-auth/salte-auth": "^3.1.8",
+    "@zalando/oauth2-client-js": "^0.0.18",
+    "axios": "^0.24.0",
+    "express": "^4.17.1",
+    "express-openid-connect": "^2.5.1",
+    "oauth": "^0.9.15",
+    "parser": "^0.1.4",
+    "passport-oauth2": "^1.6.1",
+    "passport-yahoo-oauth": "^0.2.0",
+    "passport-yahoo-oauth2": "^0.2.6",
+    "playwright": "^1.17.1",
+    "qs": "^6.10.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "remix": "^1.0.6",
+    "yahoo-fantasy": "^4.1.5"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.0.6",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "typescript": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "sideEffects": false
+}
