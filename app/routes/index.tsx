@@ -1,5 +1,7 @@
 import type { MetaFunction, LoaderFunction } from 'remix';
 import { useLoaderData, json, Link } from 'remix';
+import { week14Data } from '~/secrets';
+// import { week14Data } from '~/secrets';
 
 type IndexData = {
   resources: Array<{ name: string; url: string }>;
@@ -12,20 +14,20 @@ type IndexData = {
 // https://remix.run/api/conventions#loader
 export let loader: LoaderFunction = async () => {
   let data: IndexData = {
-    resources: [
-      {
-        name: 'Leaderboard',
-        url: 'https://remix.run/docs',
-      },
-      {
-        name: 'Losers',
-        url: 'https://reactrouter.com/docs',
-      },
-      {
-        name: 'More to Learn',
-        url: 'https://discord.gg/VBePs6d',
-      },
-    ],
+    // resources: [
+    //   {
+    //     name: 'Leaderboard',
+    //     url: 'https://remix.run/docs',
+    //   },
+    //   {
+    //     name: 'Losers',
+    //     url: 'https://reactrouter.com/docs',
+    //   },
+    //   {
+    //     name: 'More to Learn',
+    //     url: 'https://discord.gg/VBePs6d',
+    //   },
+    // ],
     demos: [
       {
         to: 'demos/matchups',
@@ -35,12 +37,9 @@ export let loader: LoaderFunction = async () => {
         to: 'demos/standings',
         name: 'Standings',
       },
-      {
-        to: 'demos/params',
-        name: '2019',
-      },
     ],
   };
+  const { allPlayers } = week14Data;
 
   // https://remix.runbod/api/remix#json
   return json(data);
@@ -62,7 +61,7 @@ export default function Index() {
     <div className='remix__page'>
       <main>
         <h2>The Official BBSFFL App</h2>
-        <p>The Docs for Hisorical Purposes 🏈</p>
+        <p>The Docs for Historical Purposes 🏈</p>
         <p>Feel free to choose your own adventure</p>
       </main>
       <aside>
@@ -73,14 +72,6 @@ export default function Index() {
               <Link to={demo.to} prefetch='intent'>
                 {demo.name}
               </Link>
-            </li>
-          ))}
-        </ul>
-        <h2>Hall of Fame</h2>
-        <ul>
-          {data.resources.map((resource) => (
-            <li key={resource.url} className='remix__page__resource'>
-              <a href={resource.url}>{resource.name}</a>
             </li>
           ))}
         </ul>

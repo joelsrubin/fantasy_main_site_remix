@@ -1,4 +1,4 @@
-import { Outlet, useLoaderData } from 'remix';
+import { Link, Outlet, useLoaderData } from 'remix';
 import type { MetaFunction, LinksFunction } from 'remix';
 
 import { week14Data } from '~/secrets';
@@ -45,7 +45,10 @@ export default function Index() {
           {data.map((item) => {
             return (
               <li key={item.name}>
-                {item.rank} {item.name}
+                {item.rank}
+                <Link to={`/demos/matchups/${item.name}`} prefetch='render'>
+                  {item.name}
+                </Link>
               </li>
             );
           })}

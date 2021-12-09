@@ -124,7 +124,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     <div className='remix-app'>
       <header className='remix-app__header'>
         <div className='container remix-app__header-content'>
-          <Link to='/' title='Remix' className='remix-app__header-home-link'>
+          <Link to='/' title='Remix' className='remix-app__header-nav'>
             BBSFFL
           </Link>
           <nav aria-label='Main navigation' className='remix-app__header-nav'>
@@ -141,7 +141,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <footer className='remix-app__footer'>
         <div className='container remix-app__footer-content'>
-          <p>&copy; You!</p>
+          <p>&copy; The Commish</p>
         </div>
       </footer>
     </div>
