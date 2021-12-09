@@ -247,6 +247,8 @@ th {
 
 .leaderboard {
   list-style: none;
+  margin: auto;
+  width: 25%;
 }
 
 .matchup-container {
@@ -329,20 +331,11 @@ th {
   border-radius: 0.5rem;
 }
 
-.avatar {
-  display: none;
-  cursor: default;
-}
-
 .name-cell {
   position: relative;
   cursor: default;
 }
-.avatar:hover {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50%;
+
+.about {
+  width: 100%;
 }

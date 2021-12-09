@@ -3,7 +3,7 @@ import { Link, useLoaderData, Outlet } from 'remix';
 import { week14Data } from '~/secrets';
 
 export function meta() {
-  return { title: 'Actions Demo' };
+  return { title: 'Matchups' };
 }
 
 export type Team = {

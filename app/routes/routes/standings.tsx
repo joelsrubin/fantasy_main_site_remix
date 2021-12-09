@@ -1,11 +1,11 @@
 import { Link, Outlet, useLoaderData } from 'remix';
-import type { MetaFunction, LinksFunction } from 'remix';
+import type { MetaFunction } from 'remix';
 
 import { week14Data } from '~/secrets';
 
 export let meta: MetaFunction = () => {
   return {
-    title: 'About Remix',
+    title: 'Standings',
   };
 };
 
@@ -13,12 +13,7 @@ export type Team = {
   name: string;
   rank: string;
   manager: {
-    manager_id: string;
-    nickname: string;
-    guid: string;
     image_url: string;
-    felo_score: string;
-    felo_tier: string;
   };
 };
 
@@ -40,21 +35,21 @@ export default function Index() {
   return (
     <div className='about'>
       <div className='about__intro'>
-        <h2>Leaderboard</h2>
+        <h2 className='matchup-header'>Leaderboard</h2>
         <ul className='leaderboard'>
           {data.map((item) => {
             return (
               <li key={item.name}>
-                {item.rank}
-                <Link to={`/demos/matchups/${item.name}`} prefetch='render'>
+                {item.rank}{' '}
+                <Link to={`/routes/matchups/${item.name}`} prefetch='render'>
                   {item.name}
                 </Link>
               </li>
             );
           })}
         </ul>
-        <hr />
-        <Outlet />
+        {/* <hr /> */}
+        {/* <Outlet /> */}
       </div>
     </div>
   );
